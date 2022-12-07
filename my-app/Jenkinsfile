@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                dir("C:\Users\Black Pearl\Documents\GitHub\jenkins-pipeline-example\my-app") {
+                dir("/var/lib/jenkins/workspace/New_demo/my-app/") {
                
                 }
             
