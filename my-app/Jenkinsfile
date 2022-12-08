@@ -15,12 +15,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                {
+                
                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '9999', url: 'https://github.com/Asuradipati/pipeline.git']]])
                 sh 'mvn -B -DskipTests clean package'
                 }
             
-            }
+            
         }
      }
     post {
