@@ -15,12 +15,11 @@ pipeline {
         }
         stage('Build') {
             steps {
-                dir("/var/lib/jenkins/workspace/mavenpipelinedemo/my-app"){
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '9999', url: 'https://github.com/Asuradipati/pipeline.git']]])
+                dir("/var/lib/jenkins/workspace/mavenpipelinedemo/my-app") {
                 sh 'mvn -B -DskipTests clean package'
                 }
             
-            } 
+            }
         }
      }
     post {
